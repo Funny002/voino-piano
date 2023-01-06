@@ -9,52 +9,25 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@view/*": [
-        "src/view/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@store": [
-        "src/store"
-      ],
-      "@store/*": [
-        "src/store/*"
-      ],
-      "@router": [
-        "src/router"
-      ],
-      "@router/*": [
-        "src/router/*"
-      ],
-      "@assets": [
-        "src/assets"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@scss": [
-        "src/assets/scss"
-      ],
-      "@scss/*": [
-        "src/assets/scss/*"
-      ],
-      "@module": [
-        "src/components"
-      ],
-      "@module/*": [
-        "src/components/*"
-      ]
+      "@view": ["src/view"],
+      "@view/*": ["src/view/*"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@router": ["src/router"],
+      "@router/*": ["src/router/*"],
+      "@assets": ["src/assets"],
+      "@assets/*": ["src/assets/*"],
+      "@scss": ["src/assets/scss"],
+      "@scss/*": ["src/assets/scss/*"],
+      "@module": ["src/components"],
+      "@module/*": ["src/components/*"]
     }
   },
   "include": [

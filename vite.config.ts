@@ -4,20 +4,18 @@ import { resolve } from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: './',
+  publicDir: resolve(__dirname, 'public'),
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'scr'),
-      '@view': resolve(__dirname, 'scr/view'),
-      '@utils': resolve(__dirname, 'scr/utils'),
-      '@store': resolve(__dirname, 'scr/store'),
-      '@router': resolve(__dirname, 'scr/router'),
-      '@assets': resolve(__dirname, 'scr/assets'),
-      '@scss': resolve(__dirname, 'scr/assets/scss'),
-      '@module': resolve(__dirname, 'scr/components'),
+      '@view': resolve(__dirname, 'src/view'),
+      '@utils': resolve(__dirname, 'src/utils'),
+      '@store': resolve(__dirname, 'src/store'),
+      '@router': resolve(__dirname, 'src/router'),
+      '@assets': resolve(__dirname, 'src/assets'),
+      '@scss': resolve(__dirname, 'src/assets/scss'),
+      '@module': resolve(__dirname, 'src/components'),
     },
-  },
-  css: {
-    devSourcemap: false,
   },
   build: {
     rollupOptions: {

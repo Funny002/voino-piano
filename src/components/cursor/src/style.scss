@@ -1,0 +1,48 @@
+$-color: var(--color, #ffffff);
+$-color-down: var(--color-down, #18f7b5);
+
+$-width: var(--width, 20px);
+$-width-block: var(--width-block, 14px);
+$-width-down-block: var(--width-down-block, 10px);
+
+.var-cursor {
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: $-width;
+  height: $-width;
+  position: fixed;
+  pointer-events: none;
+  box-sizing: content-box;
+  border: 2px solid $-color;
+  transition-duration: 0.2s;
+  mix-blend-mode: difference;
+  transition-property: border-color, transform;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+
+  &_block {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: $-width-block;
+    height: $-width-block;
+    background-color: $-color;
+    transition-duration: 0.2s;
+    transform: translate(-50%, -50%);
+    transition-property: width, height, background-color;
+  }
+
+  &.is-hide {
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  }
+
+  &.is-down {
+    border-color: $-color-down;
+
+    .var-cursor_block {
+      width: $-width-down-block;
+      height: $-width-down-block;
+      background-color: $-color-down;
+    }
+  }
+}
