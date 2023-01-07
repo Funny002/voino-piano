@@ -15,6 +15,7 @@ export default defineConfig({
       '@assets': resolve(__dirname, 'src/assets'),
       '@scss': resolve(__dirname, 'src/assets/scss'),
       '@module': resolve(__dirname, 'src/components'),
+      '@images': resolve(__dirname, 'src/assets/images'),
     },
   },
   build: {

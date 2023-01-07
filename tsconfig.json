@@ -27,7 +27,8 @@
       "@scss": ["src/assets/scss"],
       "@scss/*": ["src/assets/scss/*"],
       "@module": ["src/components"],
-      "@module/*": ["src/components/*"]
+      "@module/*": ["src/components/*"],
+      "@images/*": ["src/assets/images/*"],
     }
   },
   "include": [

@@ -1,0 +1,49 @@
+$-scale: var(--scale, 1.3);
+$-width: var(--width, 60px);
+$-border: var(--border, #000);
+$-width-block: var(--width-block, 40px);
+$-width-active: var(--width-active, 80px);
+$-color-block: var(--color-block, #ec5555);
+$-color-block-active: var(--color-block-active, #ec5555);
+
+.var-keyboard {
+  width: $-width;
+  height: $-width;
+  position: relative;
+  transform: rotate(45deg);
+  transition-duration: 0.2s;
+  border: 4px solid $-border;
+  margin: calc($-width-block / 2);
+  transition-property: width, height;
+
+  &_block {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: $-width-block;
+    pointer-events: none;
+    height: $-width-block;
+    background-color: $-color-block;
+    transform: translate(-50%, -50%);
+    transition: background-color .2s;
+  }
+
+  &_text {
+    color: $-border;
+    font-weight: bold;
+    text-align: center;
+    width: $-width-block;
+    height: $-width-block;
+    transform: rotate(-45deg);
+    line-height: $-width-block;
+  }
+
+  &.is-active {
+    width: $-width-active;
+    height: $-width-active;
+
+    .var-keyboard_block {
+      background-color: $-color-block-active;
+    }
+  }
+}
