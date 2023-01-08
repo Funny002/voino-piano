@@ -12,7 +12,7 @@ export interface State {
 export const useCursorName = 'useCursorName';
 
 export const useCursorStore = defineStore(useCursorName, {
-  state: (): State => ({ top: 0, left: 0, hide: false, hasDown: false }),
+  state: (): State => ({ top: -100, left: -100, hide: false, hasDown: false }),
   getters: {
     getState: ({ bindState }) => !!bindState,
     getData: ({ top, left, hide, hasDown }) => ({ top, left, hide, hasDown }),

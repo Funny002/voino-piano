@@ -20,9 +20,6 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: {
-        sso: 'src/package/sso/index.html',
-      },
       output: {
         chunkFileNames: 'js/[name].[hash].js',
         entryFileNames: 'js/[name].[hash].js',

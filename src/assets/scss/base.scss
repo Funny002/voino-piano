@@ -4,10 +4,14 @@
   box-sizing: border-box;
 }
 
-.App {
-  width: 100vw;
+body {
   cursor: none;
-  height: 100vh;
   user-select: none;
-  //background: #ec5555;
+}
+
+#App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #f3f3f3;
 }
