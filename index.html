@@ -27,7 +27,7 @@
       width: 50px;
       height: 50px;
       position: absolute;
-      transition: all .3s;
+      transition: all 1s;
       pointer-events: none;
       background-color: #fff5c8;
       transform: translate(-50%, -50%) rotate(45deg)
@@ -48,7 +48,8 @@
     }
 
     .view-firstScreen.is-end {
-      top: 30%
+      top: 30%;
+      transform: translate(-50%, -50%) rotate(45deg) scale(.5)
     }
 
     .view-firstScreen.is-end::before {
@@ -86,7 +87,7 @@
       100% {
         opacity: 0;
         border-width: 2px;
-        transform: translate(-50%, -50%) scale(2)
+        transform: translate(-50%, -50%) scale(3)
       }
     }</style>
   </head>

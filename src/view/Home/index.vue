@@ -16,19 +16,23 @@
         </div>
       </template>
     </div>
-    <div class="view-home_nav" :class="{'is-show': data.navShow}" @click="data.navShow = false">
+    <div class="view-home_nav" :class="{'is-show': data.navShow}" @click="onNavHide">
       <img class="view-home_nav-img" :src="keyboardGuide" alt="keyboardGuide"/>
     </div>
+  </div>
+  <div class="view-home_background">
+    <train ref="trainRef"/>
   </div>
 </template>
 
 <script lang="ts">export default { name: 'Home' };</script>
 
 <script lang="ts" setup>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import Keyboard from '@module/keyboard';
+import Train from '@module/train';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import keyboardGuide from '@images/keyboardGuide.png';
 import AudioPiano from './src/AudioPiano';
-import Keyboard from '@module/keyboard';
 import pianoMap from './src/config';
 
 const pianoMapArr = [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']];
@@ -47,6 +51,8 @@ const data = reactive<State>({
   audioPiano: new AudioPiano({ type: 'sine' }),
 });
 
+const trainRef = ref<any>();
+
 function activePiano(value: number) {
   data.active.push(value);
   setTimeout(() => {
@@ -58,6 +64,20 @@ function activePiano(value: number) {
 function handleKeyDown(event: KeyboardEvent) {
   const item = pianoMap[event.key];
   if (item) activePiano(pianoMap[event.key].value);
+  onTrainClick(event.key === '1');
+}
+
+function onNavHide() {
+  data.navShow = false;
+  trainRef.value?.active();
+}
+
+function onTrainClick(state: boolean) {
+  if (state) {
+    trainRef.value?.active();
+  } else {
+    trainRef.value?.end();
+  }
 }
 
 onMounted(() => {
