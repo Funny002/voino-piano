@@ -1,4 +1,4 @@
-$-color: var(--track-color, #293a5c);
+$-color: var(--track-color, #4073ba);
 $-body-color: var(--track-body-color, #224779);
 $-body-border-color: var(--track-body-border-color, #f3d79b);
 
@@ -6,6 +6,7 @@ $-body-border-color: var(--track-body-border-color, #f3d79b);
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: 1px;
   padding-bottom: 4px;
   pointer-events: none;
 
@@ -71,7 +72,7 @@ $-body-border-color: var(--track-body-border-color, #f3d79b);
 
   &.is-end > .var-train_content {
     transform: translate(200%);
-    animation: train-animation-end 4s alternate infinite;
+    animation: train-animation-end 4s;
   }
 }
 

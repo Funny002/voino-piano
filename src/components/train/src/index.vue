@@ -28,6 +28,10 @@
 <script lang="ts" setup>
 import { TrainCompartment, TrainFoot, TrainHead } from '@module/train';
 import { reactive } from 'vue';
+import { Queue } from '@utils/queue';
+
+const queue_ = new Queue();
+
 
 const data = reactive({
   end: false,
@@ -38,14 +42,14 @@ const data = reactive({
 function active() {
   data.end = false;
   data.start = true;
-  setTimeout(() => {
+  queue_.add(() => {
     data.start = false;
     data.load = true;
-  }, 1000);
+  }, 0, 800);
 }
 
 function end() {
-  setTimeout(() => {
+  queue_.add(() => {
     data.load = false;
     data.end = true;
   }, 1000);

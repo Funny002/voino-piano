@@ -2,7 +2,6 @@
   <div class="view-home">
     <div class="view-home_keyboard-box">
       <template v-for="(item, key) in pianoMapArr" :key="`box-${key}`">
-        <!--          <div class="view-home_keyboard" :style="{paddingLeft: `${40 * key}px`, paddingRight :`${40 * (2 - key)}px`}">-->
         <div class="view-home_keyboard">
           <template v-for="keys in item" :key="`keyboard-${keys}`">
             <keyboard
@@ -22,6 +21,7 @@
   </div>
   <div class="view-home_background">
     <train ref="trainRef"/>
+    <bridge ref="bridgeRef" speed="2s"/>
   </div>
 </template>
 
@@ -34,6 +34,7 @@ import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import keyboardGuide from '@images/keyboardGuide.png';
 import AudioPiano from './src/AudioPiano';
 import pianoMap from './src/config';
+import Bridge from '@module/bridge/src/index.vue';
 
 const pianoMapArr = [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']];
 

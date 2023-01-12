@@ -1,0 +1,15 @@
+.var-bridge {
+  width: 100%;
+  display: flex;
+  animation: bridge-animation var(--speed, .1s) linear infinite;
+
+  > * {
+    flex: 0 0 auto;
+  }
+}
+
+@keyframes bridge-animation {
+  100% {
+    transform: translateX(var(--column-width))
+  }
+}
